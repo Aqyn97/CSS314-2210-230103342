@@ -1,0 +1,28 @@
+Student ID: 230103342
+Array size: 30000000 elements (float64)
+Logical cores detected: 8
+Threads tested: 1, 2, 8
+Trials per configuration: 3 (median shown)
+Timing includes thread creation and joining.
+Input range: [0.01, 1.0), avoiding tangent singularities.
+
+Kernel A (Memory-bound vector copy)
+ Workers |  Wall time (ms) |   Speedup |  Efficiency
+---------------------------------------------------------
+       1 |           6.635 |    1.000x |     100.00%
+       2 |           6.237 |    1.064x |      53.19%
+       8 |           8.226 |    0.807x |      10.08%
+
+Kernel B (Compute-heavy trig expression)
+ Workers |  Wall time (ms) |   Speedup |  Efficiency
+---------------------------------------------------------
+       1 |         192.859 |    1.000x |     100.00%
+       2 |         111.302 |    1.733x |      86.64%
+       8 |          47.033 |    4.101x |      51.26%
+
+Scaling diagnosis (based on measured results):
+  Copy speedup at 8 workers: 0.807x
+  Trig speedup at 8 workers: 4.101x
+  Kernel A (vector copy) stalled relative to Kernel B, consistent with memory bandwidth saturation.
+  Note: this suggests saturation; bandwidth counters would be needed to confirm the cause.
+Validation: both kernels produced correct sampled results.
