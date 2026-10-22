@@ -1,0 +1,23 @@
+Student ID: 230103342
+System: macOS-26.6.2-arm64-arm-64bit
+CPU: arm
+Logical cores / parallel workers: 8
+Operation: y[i] = 1.75 * x[i] + (-0.25)
+Benchmark: 7 timed repeats per mode; median wall time
+Thread pool reused across measurements; dispatch and synchronization timed
+All serial and parallel results verified for equality
+
+           N |   Serial (ms) | Parallel (ms) |   Speedup |   Faster
+----------------------------------------------------------------------
+         100 |      0.001375 |      0.084167 |     0.016 |   Serial
+       1,000 |      0.001458 |      0.045375 |     0.032 |   Serial
+      10,000 |      0.004416 |      0.098417 |     0.045 |   Serial
+     100,000 |      0.032167 |      0.133750 |     0.241 |   Serial
+   1,000,000 |      0.345292 |      0.413834 |     0.834 |   Serial
+  10,000,000 |      4.619959 |      4.883708 |     0.946 |   Serial
+
+Observed slower-to-faster crossover interval(s):
+  NONE observed among the six tested sizes.
+  No exact crossover point can be inferred from these measurements.
+
+Note: wall times vary with machine load; rerun to assess stability.
