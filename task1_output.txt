@@ -1,0 +1,12 @@
+Student ID: 230103342
+OS: Darwin 25.6.0
+Platform: macOS-26.6.2-arm64-arm-64bit
+CPU model: Apple M2
+Logical cores: 8
+Array size: 20,000,000
+Data type: float64
+Random seed: 230103342
+Execution: serial (single thread)
+Sum: 10000186.1141696200
+Standard deviation: 0.2886990089
+Wall-clock time: 1816.617 ms
