@@ -1,0 +1,20 @@
+Student ID: 230103342
+OS: Darwin 25.6.0
+CPU: arm
+Logical cores: 8
+Items: 1000 (0 through 999)
+Workers: 4 threads
+Workload: sleep(0.0001 * (i % 20))
+Dynamic queue chunk size: 5
+
+Strategy                    Wall (ms)    First (ms)    Last (ms)   Finish delta (ms)
+--------------------------------------------------------------------------------------
+Static (250 per worker)       299.349       287.720      299.327              11.607
+Dynamic queue (chunk=5)       299.436       288.873      299.353              10.480
+
+Static tasks per worker:  [250, 250, 250, 250]
+Dynamic tasks per worker: [290, 195, 250, 265]
+Wall time ratio (Static / Dynamic): 1.000x
+Validation: all 1,000 items processed once per strategy.
+Note: The workload repeats every 20 items; 250-item static blocks split cycles unevenly.
+Scheduling and OS noise may make dynamic scheduling slower despite load balancing.
