@@ -1,0 +1,18 @@
+Student ID: 230103342
+Threads: 4
+Increments per thread: 2000000
+Expected final value: 8000000
+
+Unsafe read-modify-write (no lock):
+  Actual final value: 3285429
+  Updates lost: 4714571
+  Percentage lost: 58.9321%
+  Wall-clock time: 4.636 ms
+
+Correct version (pthread mutex):
+  Actual final value: 8000000
+  Wall-clock time: 167.803 ms
+
+Synchronization time penalty: +163.167 ms
+Synchronization time ratio (locked / unsafe): 36.196x
+Validation: PASS
