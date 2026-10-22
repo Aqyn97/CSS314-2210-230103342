@@ -1,0 +1,12 @@
+Student ID: 230103342
+Physical cores used (threads): 8
+Increments per thread: 50000000
+Counter size: 8 bytes; padded stride: 64 bytes
+
+Configuration            Wall Time (ms)
+-----------------------------------------
+Unpadded Shared                 214.918
+Padded (64-byte)                 56.748
+
+Execution ratio (Unpadded / Padded): 3.787x
+Validation: every thread completed 50000000 increments in both runs.
