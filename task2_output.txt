@@ -1,0 +1,19 @@
+Student ID: 230103342
+OS: Darwin 25.6.0
+Logical cores detected: 8
+Array size: 20,000,000 float64 elements
+Random seed: 230103342
+Parallel model: multiprocessing (processes)
+Timing includes process startup, summation, and aggregation
+Amdahl parallel fraction (P): 0.95
+
+  Cores | Wall Time (ms) |   Speedup | Amdahl Upper Bound
+-----------------------------------------------------------
+      1 |         60.855 |     1.000 |              1.000
+      2 |        129.225 |     0.471 |              1.905
+      4 |        108.542 |     0.561 |              3.478
+      8 |        178.915 |     0.340 |              5.926
+     16 |        324.403 |     0.188 |              9.143
+
+Baseline sum: 10000186.1141694970
+All worker-count sums verified against the 1-worker result.
